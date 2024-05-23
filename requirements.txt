@@ -1,0 +1,11 @@
+eel
+opencv-python-headless
+mediapipe
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+tensorflow
+openpyxl
+Pillow

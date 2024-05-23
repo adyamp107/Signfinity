@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Create Training</title>
+    <link rel='stylesheet' href='../style.css'>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/logo.png">
+</head>
+<body>
+    <div class='form_container'>
+        <div class='form_create_training_support_vector_machine_page'>
+            <div class='form_create_training_support_vector_machine_frame frame_1'>
+                <div class='form_create_training_support_vector_machine_big_title big_title_1'>Support Vector Machine</div>
+                <div class='form_create_training_support_vector_machine_subframe'>
+                    <div class='form_create_training_support_vector_machine_select_path_title title_1'>Select Path</div>
+                    <div class='form_create_training_support_vector_machine_selected_path_title title_1'>Selected Path</div>
+                    <div class='form_create_training_support_vector_machine_name_title title_1'>Training Name</div>
+                    <div class='form_create_training_support_vector_machine_random_state_title title_1'>Random State</div>
+                    <div class='form_create_training_support_vector_machine_c_title title_1'>C (1, N)</div>
+                    <div class='form_create_training_support_vector_machine_kernel_title title_1'>Kernel</div>
+                    <div class='form_create_training_support_vector_machine_create_title title_1'>Create Training</div>
+
+                    <progress value='0' max='100' class='form_create_training_support_vector_machine_progress_progressbar'></progress>
+                    <div class='form_create_training_support_vector_machine_progress_text'>Training with 1 C</div>
+
+                    <div class='form_create_training_support_vector_machine_select_path_button button_1 send_data'>Select</div>
+                    <input type='text' class='form_create_training_support_vector_machine_selected_path_text input_text send_data' placeholder='Training Path ...' readonly>
+                    <input type='text' class='form_create_training_support_vector_machine_name_text input_text send_data' placeholder='Training Name ...'>
+                    <input type='number' class='form_create_training_support_vector_machine_random_state_number input_text send_data' placeholder='Random State ...' value='1234'>
+                    <input type='number' class='form_create_training_support_vector_machine_c_number input_text send_data' placeholder='C ...' value='100'>
+                    <select name="" id="" class="form_create_training_support_vector_machine_kernel_select input_selection">
+                        <option value="linear">Linear</option>
+                        <option value="poly">Polynomial</option>
+                        <option value="rbf">Radial Basis Function</option>
+                        <option value="sigmoid">Sigmoid</option>
+                        <option value="precomputed">Precomputed</option>
+                    </select>
+                    <div class='form_create_training_support_vector_machine_create_button button_1 send_data'>Create</div>
+                </div>    
+            </div>        
+        </div>
+    </div>
+    <script>
+        change_color_mode_root();
+        function change_color_mode_root() {
+            const color_root = ['--color-gray-1', '--color-gray-2', '--color-gray-3', '--color-gray-4', '--color-gray-5', '--color-main'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });        
+        }
+        change_color_theme_root();
+        function change_color_theme_root() {
+            const color_root = ['--color-blue-1', '--color-blue-2', '--color-blue-3'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });   
+        }
+        let form_create_training_support_vector_machine_select_path_button = document.querySelector('.form_create_training_support_vector_machine_select_path_button');
+        let form_create_training_support_vector_machine_selected_path_text = document.querySelector('.form_create_training_support_vector_machine_selected_path_text');
+        let form_create_training_support_vector_machine_name_text = document.querySelector('.form_create_training_support_vector_machine_name_text');
+        let form_create_training_support_vector_machine_random_state_number = document.querySelector('.form_create_training_support_vector_machine_random_state_number');
+        let form_create_training_support_vector_machine_c_number = document.querySelector('.form_create_training_support_vector_machine_c_number');
+        let form_create_training_support_vector_machine_kernel_select = document.querySelector('.form_create_training_support_vector_machine_kernel_select');
+        let form_create_training_support_vector_machine_create_button = document.querySelector('.form_create_training_support_vector_machine_create_button');
+
+        let form_create_training_support_vector_machine_progress_progressbar = document.querySelector('.form_create_training_support_vector_machine_progress_progressbar');
+        let form_create_training_support_vector_machine_progress_text = document.querySelector('.form_create_training_support_vector_machine_progress_text');
+
+        form_create_training_support_vector_machine_select_path_button.addEventListener('click', () => {            
+            window.opener.postMessage({
+                element_event: 'form_create_training_support_vector_machine_select_path_button'
+            }, '*');
+        });
+        form_create_training_support_vector_machine_create_button.addEventListener('click', () => {
+            window.opener.postMessage({
+                element_event: 'form_create_training_support_vector_machine_create_button',
+                training_support_vector_machine_path: form_create_training_support_vector_machine_selected_path_text.value,
+                training_support_vector_machine_name: form_create_training_support_vector_machine_name_text.value,
+                training_support_vector_machine_random_state: form_create_training_support_vector_machine_random_state_number.value,
+                training_support_vector_machine_c: form_create_training_support_vector_machine_c_number.value,
+                training_support_vector_machine_kernel: form_create_training_support_vector_machine_kernel_select.value
+            }, '*');
+        });
+        window.addEventListener('message', (event) => {
+            if(event.origin !== window.location.origin) return;
+            if(event.data.element_event == 'form_create_training_support_vector_machine_selected_path_text') {
+                form_create_training_support_vector_machine_selected_path_text.value = event.data.training_support_vector_machine_path;
+            } else if(event.data.element_event == 'form_create_training_support_vector_machine_progress_progressbar') {
+                form_create_training_support_vector_machine_progress_progressbar.value = event.data.percentage;
+                form_create_training_support_vector_machine_progress_text.innerHTML = `Training with ${event.data.c} C`;
+            } else if(event.data.element_event == 'setting_app_control_color_mode_select_event') {
+                change_color_mode_root();
+            } else if(event.data.element_event == 'setting_app_control_color_theme_select_event') {
+                change_color_theme_root();
+            }
+        });
+    </script>
+</body>
+</html>

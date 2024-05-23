@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Create Training</title>
+    <link rel='stylesheet' href='../style.css'>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/logo.png">
+</head>
+<body>
+    <div class='form_container'>
+        <div class='form_create_training_random_forest_page'>
+            <div class='form_create_training_random_forest_frame frame_1'>
+                <div class='form_create_training_random_forest_big_title big_title_1'>Random Forest</div>
+                <div class='form_create_training_random_forest_subframe'>
+                    <div class='form_create_training_random_forest_select_path_title title_1'>Select Path</div>
+                    <div class='form_create_training_random_forest_selected_path_title title_1'>Selected Path</div>
+                    <div class='form_create_training_random_forest_name_title title_1'>Training Name</div>
+                    <div class='form_create_training_random_forest_random_state_title title_1'>Random State</div>
+                    <div class='form_create_training_random_forest_n_estimators_title title_1'>N-Estimators (100, N)</div>
+                    <div class='form_create_training_random_forest_create_title title_1'>Create Training</div>
+
+                    <progress value='0' max='100' class='form_create_training_random_forest_progress_progressbar'></progress>
+                    <div class='form_create_training_random_forest_progress_text'>Training with 100 estimators</div>
+
+                    <div class='form_create_training_random_forest_select_path_button button_1 send_data'>Select</div>
+                    <input type='text' class='form_create_training_random_forest_selected_path_text input_text send_data' placeholder='Training Path ...' readonly>
+                    <input type='text' class='form_create_training_random_forest_name_text input_text send_data' placeholder='Training Name ...'>
+                    <input type='number' class='form_create_training_random_forest_random_state_number input_text send_data' placeholder='Random State ...' value='1234'>
+                    <input type='number' class='form_create_training_random_forest_n_estimators_number input_text send_data' placeholder='N-Estimators ...' value='150'>
+                    <div class='form_create_training_random_forest_create_button button_1 send_data'>Create</div>
+                </div>    
+            </div>        
+        </div>
+    </div>
+    <script>
+        change_color_mode_root();
+        function change_color_mode_root() {
+            const color_root = ['--color-gray-1', '--color-gray-2', '--color-gray-3', '--color-gray-4', '--color-gray-5', '--color-main'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });
+        }
+        change_color_theme_root();
+        function change_color_theme_root() {
+            const color_root = ['--color-blue-1', '--color-blue-2', '--color-blue-3'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });   
+        }
+        let form_create_training_random_forest_select_path_button = document.querySelector('.form_create_training_random_forest_select_path_button');
+        let form_create_training_random_forest_selected_path_text = document.querySelector('.form_create_training_random_forest_selected_path_text');
+        let form_create_training_random_forest_name_text = document.querySelector('.form_create_training_random_forest_name_text');
+        let form_create_training_random_forest_random_state_number = document.querySelector('.form_create_training_random_forest_random_state_number');
+        let form_create_training_random_forest_n_estimators_number = document.querySelector('.form_create_training_random_forest_n_estimators_number');
+        let form_create_training_random_forest_create_button = document.querySelector('.form_create_training_random_forest_create_button');
+
+        let form_create_training_random_forest_progress_progressbar = document.querySelector('.form_create_training_random_forest_progress_progressbar');
+        let form_create_training_random_forest_progress_text = document.querySelector('.form_create_training_random_forest_progress_text');
+
+        form_create_training_random_forest_select_path_button.addEventListener('click', () => {            
+            window.opener.postMessage({
+                element_event: 'form_create_training_random_forest_select_path_button'
+            }, '*');
+        });
+        form_create_training_random_forest_create_button.addEventListener('click', () => {
+            window.opener.postMessage({
+                element_event: 'form_create_training_random_forest_create_button',
+                training_random_forest_path: form_create_training_random_forest_selected_path_text.value,
+                training_random_forest_name: form_create_training_random_forest_name_text.value,
+                training_random_forest_random_state: form_create_training_random_forest_random_state_number.value,
+                training_random_forest_n_estimators: form_create_training_random_forest_n_estimators_number.value,
+            }, '*');
+        });
+        window.addEventListener('message', (event) => {
+            if(event.origin !== window.location.origin) return;
+            if(event.data.element_event == 'form_create_training_random_forest_selected_path_text') {
+                form_create_training_random_forest_selected_path_text.value = event.data.training_random_forest_path;
+            } else if(event.data.element_event == 'form_create_training_random_forest_progress_progressbar') {
+                form_create_training_random_forest_progress_progressbar.value = event.data.percentage;
+                form_create_training_random_forest_progress_text.innerHTML = `Training with ${event.data.n_estimators} estimators`;
+            } else if(event.data.element_event == 'setting_app_control_color_mode_select_event') {
+                change_color_mode_root();
+            } else if(event.data.element_event == 'setting_app_control_color_theme_select_event') {
+                change_color_theme_root();
+            }
+        });
+    </script>
+</body>
+</html>

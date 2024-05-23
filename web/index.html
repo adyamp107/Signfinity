@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signfinity</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation_bar">
+            <div class="navigation_logo">
+                <img class="navigation_logo_picture" src="./assets/logo.png" alt="">
+                <div class="navigation_logo_text">Signfinity</div>
+            </div>
+            <div class="navigation_menu_group">
+                <div class="navigation_menu_home button_3 selected_button_3">
+                    <img class="navigation_menu_home_logo_picture logo_1" src="./assets/light_home.png" alt="">
+                    <div class="navigation_menu_home_text">Home</div>
+                </div>
+                <div class="navigation_menu_dataset button_3">
+                    <img class="navigation_menu_dataset_logo_picture logo_1" src="./assets/light_dataset.png" alt="">
+                    <div class="navigation_menu_dataset_text">Dataset</div>
+                </div>
+                <div class="navigation_menu_training button_3">
+                    <img class="navigation_menu_training_logo_picture logo_1" src="./assets/light_training.png" alt="">
+                    <div class="navigation_menu_training_text">Training</div>
+                </div>
+                <div class="navigation_menu_translate button_3">
+                    <img class="navigation_menu_translate_logo_picture logo_1" src="./assets/light_translate.png" alt="">
+                    <div class="navigation_menu_translate_text">Translate</div>
+                </div>
+                <div class="navigation_menu_history button_3">
+                    <img class="navigation_menu_history_logo_picture logo_1" src="./assets/light_history.png" alt="">
+                    <div class="navigation_menu_history_text">History</div>
+                </div>
+                <div class="navigation_menu_about_us button_3">
+                    <img class="navigation_menu_about_us_logo_picture logo_1" src="./assets/light_about_us.png" alt="">
+                    <div class="navigation_menu_about_us_text">About Us</div>
+                </div>
+                <div class="navigation_menu_setting button_3">
+                    <img class="navigation_menu_setting_logo_picture logo_1" src="./assets/light_setting.png" alt="">
+                    <div class="navigation_menu_setting_text">Setting</div>
+                </div>
+            </div>
+            <div class="navigation_empty"></div>
+        </div>
+        <div class="home_page page_1 selected_page_1">
+            <div class="home_title">Welcome, let's do sign language!</div>
+            <div class="home_dataset_button button_7">Dataset</div>
+            <div class="home_training_button button_7">Training</div>
+            <div class="home_history_button button_7">History</div>
+            <div class="home_setting_button button_7">Setting</div>
+            <div class="home_translate_button button_7">Translate</div>
+        </div>
+        <div class="dataset_page page_1">
+            <div class="dataset_control_frame frame_1">
+                <div class="dataset_control_big_title big_title_1">Dataset Control</div>
+                <div class="dataset_control_sub_frame">
+                    <div class="dataset_control_type_title title_1">Dataset Type</div>
+                    <div class="dataset_control_select_path_title title_1">Select Dataset</div>
+                    <div class="dataset_control_create_title title_1">Create Dataset</div>
+                    <div class="dataset_control_delete_title title_1">Delete Dataset</div>
+                    <select name="" id="" class="dataset_control_type_select input_selection">
+                        <option value="Landmark File">Landmark File</option>
+                        <option value="Image Folder">Image Folder</option>
+                    </select>
+                    <div class="dataset_control_select_path_button button_1">Select</div>
+                    <div class="dataset_control_create_button button_1">Create</div>
+                    <div class="dataset_control_delete_button button_1">Delete</div>                    
+                </div>
+            </div>
+            <div class="dataset_selected_path_frame frame_1">
+                <div class="dataset_selected_path_big_title big_title_1">Selected Dataset</div>
+                <div class="dataset_selected_path_sub_frame">
+                    <div class="dataset_selected_path_file_folder_title title_1">Selected Path</div>
+                    <div class="dataset_selected_path_clear_title title_1">Clear Path</div>
+                    <input type="text" class="dataset_selected_path_file_folder_text input_text" placeholder="Select Path ..." readonly>
+                    <div class="dataset_selected_path_clear_button button_1">Clear</div>
+                </div>
+            </div>
+            <div class="dataset_word_list_frame frame_1">
+                <div class="dataset_word_list_big_title big_title_1">Word List</div>
+                <div class="dataset_word_list_sub_frame">
+                    <div class="dataset_word_list_no_data_title title_1">No Data</div>               
+                </div>
+            </div>
+            <div class="dataset_selected_word_frame frame_1">
+                <div class="dataset_selected_word_big_title big_title_1">Selected Dataset</div>
+                <div class="dataset_selected_word_sub_frame">
+                    <div class="dataset_selected_word_label_title title_1">Selected Path</div>
+                    <div class="dataset_selected_word_clear_title title_1">Clear Path</div>
+                    <input type="text" class="dataset_selected_word_label_text input_text" placeholder="Select Word ..." readonly>
+                    <div class="dataset_selected_word_clear_button button_1">Clear</div>
+                </div>
+            </div>
+            <div class="dataset_edit_frame frame_1">
+                <div class="dataset_edit_segmented_button_group">
+                    <div class="dataset_edit_add_segmented_button button_2 selected_button_2">Add</div>
+                    <div class="dataset_edit_delete_segmented_button button_2">Delete</div>
+                    <div class="dataset_edit_redata_segmented_button button_2">Redata</div>
+                    <div class="dataset_edit_relabel_segmented_button button_2">Relabel</div>
+                </div>
+                <div class="dataset_edit_sub_frame">
+                    <div class="dataset_edit_add_sub_frame frame_2 selected_frame_2">
+                        <div class="dataset_edit_add_new_word_title title_1">Add New Word</div>
+                        <div class="dataset_edit_add_take_title title_1">Take Dataset</div>
+                        <input type="text" class="dataset_edit_add_new_word_text input_text" placeholder="New Word ...">
+                        <div class="dataset_edit_add_take_button button_1">Next</div>
+                    </div>
+                    <div class="dataset_edit_delete_sub_frame frame_2">
+                        <div class="dataset_edit_delete_word_title title_1">Delete Word</div>
+                        <div class="dataset_edit_delete_word_button button_1">Delete</div>
+                    </div>
+                    <div class="dataset_edit_redata_sub_frame frame_2">
+                        <div class="dataset_edit_redata_word_title title_1">Redata Word</div>
+                        <div class="dataset_edit_redata_word_button button_1">Redata</div>
+                    </div>
+                    <div class="dataset_edit_relabel_sub_frame frame_2">
+                        <div class="dataset_edit_relabel_new_word_title title_1">New Word</div>
+                        <div class="dataset_edit_relabel_change_title title_1">Relabel Word</div>
+                        <input type="text" class="dataset_edit_relabel_new_word_text input_text" placeholder="New Word ...">
+                        <div class="dataset_edit_relabel_change_button button_1">Relabel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="training_page page_1">
+            <div class="training_control_frame frame_1">
+                <div class="training_control_big_title big_title_1">Training Control</div>
+                <div class="training_control_sub_frame">
+                    <div class="training_control_select_path_title title_1">Select Training</div>
+                    <div class="training_control_algorithm_title title_1">Training Algorithm</div>
+                    <div class="training_control_train_title title_1">Train Dataset</div>
+                    <div class="training_control_delete_title title_1">Delete Training</div>
+                    
+                    <div class="training_control_select_path_button button_1">Select</div>                    
+                    <select name="" id="" class="training_control_algorithm_select input_selection">
+                        <option value="Random Forest">Random Forest</option>
+                        <option value="K-Nearest Neighbors">K-Nearest Neighbors</option>
+                        <option value="Decision Tree">Decision Tree</option>
+                        <option value="Support Vector Machine">Support Vector Machine</option>
+                        <option value="Naive Bayes">Naive Bayes</option>
+                    </select>
+                    <div class="training_control_train_button button_1">Train</div>
+                    <div class="training_control_delete_button button_1">Delete</div>                    
+                </div>
+            </div>
+            <div class="training_selected_path_frame frame_1">
+                <div class="training_selected_path_big_title big_title_1">Selected Training</div>
+                <div class="training_selected_path_sub_frame">
+                    <div class="training_selected_path_file_folder_title title_1">Selected Path</div>
+                    <div class="training_selected_path_clear_title title_1">Clear Path</div>
+                    <input type="text" class="training_selected_path_file_folder_text input_text" placeholder="Select Path ..." readonly>
+                    <div class="training_selected_path_clear_button button_1">Clear</div>
+                </div>
+            </div>
+            <div class="training_graph_frame frame_1">
+                <div class="training_graph_segmented_button_group">
+                    <div class="training_graph_classification_report_segmented_button button_4 selected_button_4">Classification Report</div>
+                    <div class="training_graph_confusion_matrix_segmented_button button_4">Confusion Matrix</div>
+                    <div class="training_graph_error_rate_segmented_button button_4">Error Rate</div>
+                    <div class="training_graph_epoch_loss_segmented_button button_4">Epoch Loss</div>
+                    <div class="training_graph_epoch_accuracy_segmented_button button_4">Epoch Accuracy</div>
+                </div>
+                <div class="training_graph_sub_frame">
+                    <div class="training_graph_classification_report_sub_frame frame_3 selected_frame_3">
+                        <div class="training_graph_classification_report_image_sub_frame">
+                            <div class="training_graph_classification_report_image_no_data">No Data cr</div>
+                            <img src="" alt="" class="training_graph_classification_report_image">
+                        </div>
+                        <div class="training_table_classification_report_sub_frame">
+                            <div class="training_table_classification_report_no_data">No Data</div>
+                        </div>
+                    </div>
+                    <div class="training_graph_confusion_matrix_sub_frame frame_3">
+                        <div class="training_graph_confusion_matrix_image_sub_frame">
+                            <div class="training_graph_confusion_matrix_image_no_data">No Data cm</div>
+                            <img src="" alt="" class="training_graph_confusion_matrix_image">
+                        </div>
+                        <div class="training_table_confusion_matrix_sub_frame">
+                            <div class="training_table_confusion_matrix_no_data">No Data</div>
+                        </div>
+                    </div>
+                    <div class="training_graph_error_rate_sub_frame frame_3">
+                        <div class="training_graph_error_rate_image_sub_frame">
+                            <div class="training_graph_error_rate_image_no_data">No Data er</div>
+                            <img src="" alt="" class="training_graph_error_rate_image">
+                        </div>
+                        <div class="training_table_error_rate_sub_frame">
+                            <div class="training_table_error_rate_no_data">No Data</div>
+                        </div>
+                    </div>
+                    <div class="training_graph_epoch_loss_sub_frame frame_3">
+                        <div class="training_graph_epoch_loss_image_sub_frame">
+                            <div class="training_graph_epoch_loss_image_no_data">No Data el</div>
+                            <img src="" alt="" class="training_graph_epoch_loss_image">
+                        </div>
+                        <div class="training_table_epoch_loss_sub_frame">
+                            <div class="training_table_epoch_loss_no_data">No Data</div>
+                        </div>
+                    </div>
+                    <div class="training_graph_epoch_accuracy_sub_frame frame_3">
+                        <div class="training_graph_epoch_accuracy_image_sub_frame">
+                            <div class="training_graph_epoch_accuracy_image_no_data">No Data ea</div>
+                            <img src="" alt="" class="training_graph_epoch_accuracy_image">
+                        </div>
+                        <div class="training_table_epoch_accuracy_sub_frame">
+                            <div class="training_table_epoch_accuracy_no_data">No Data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="translate_page page_1">
+            <div class="translate_camera_frame frame_1">
+                <img src="" alt="" class="translate_camera_video">
+            </div>
+            <div class="translate_control_frame frame_1">
+                <input type="text" class="translate_control_result_text input_text" readonly>                
+                <progress value="0" max="100" class="translate_control_time_limit_progressbar"></progress>
+                <img src="" alt="">
+                <img class="translate_control_marker_button button_6" src="./assets/marker.png">
+                <img class="translate_control_restart_button button_6" src="./assets/restart.png">
+                <img class="translate_control_start_button button_6" src="./assets/start.png">
+                <img class="translate_control_stop_button button_6" src="./assets/stop.png">
+                <img class="translate_control_erase_button button_6" src="./assets/erase.png">
+            </div>
+            <div class="translate_translation_list_frame frame_1">
+                <div class="translate_translation_list_big_title big_title_1">Translation List</div>
+                <div class="translate_translation_list_sub_frame">
+                    <div class="translate_translation_list_no_data_title title_1">No Data</div>               
+                </div>
+            </div>
+        </div>
+        <div class="history_page page_1">
+            <div class="history_control_frame frame_1">
+                <div class="history_control_big_title big_title_1">History Control</div>
+                <div class="history_control_sub_frame">
+                    <div class="history_control_select_path_title title_1">Select History</div>
+                    <div class="history_control_create_title title_1">Create History</div>
+                    <div class="history_control_delete_title title_1">Delete History</div>
+
+                    <div class="history_control_select_path_button button_1">Select</div>
+                    <div class="history_control_create_button button_1">Create</div>
+                    <div class="history_control_delete_button button_1">Delete</div>                    
+                </div>
+            </div>
+            <div class="history_selected_path_frame frame_1">
+                <div class="history_selected_path_big_title big_title_1">Selected History</div>
+                <div class="history_selected_path_sub_frame">
+                    <div class="history_selected_path_file_folder_title title_1">Selected Path</div>
+                    <div class="history_selected_path_clear_title title_1">Clear Path</div>
+                    <input type="text" class="history_selected_path_file_folder_text input_text" placeholder="Select Path ..." readonly>
+                    <div class="history_selected_path_clear_button button_1">Clear</div>
+                </div>
+            </div>
+            <div class="history_date_time_list_frame frame_1">
+                <div class="history_date_time_list_big_title big_title_1">Translation List</div>
+                <div class="history_date_time_list_sub_frame">
+                    <div class="history_date_time_list_no_data_title title_1">No Data</div>               
+                </div>
+            </div>
+            <div class="history_selected_date_time_frame frame_1">
+                <div class="history_selected_date_time_big_title big_title_1">Selected Translation</div>
+                <div class="history_selected_date_time_sub_frame">
+                    <div class="history_selected_date_time_label_title title_1">Selected Date Time</div>
+                    <div class="history_selected_date_time_clear_title title_1">Clear Date Time</div>
+                    <div class="history_selected_date_time_delete_title title_1">Delete Date Time</div>
+
+                    <input type="text" class="history_selected_date_time_label_text input_text" placeholder="Select Translation ..." readonly>
+                    <div class="history_selected_date_time_clear_button button_1">Clear</div>
+                    <div class="history_selected_date_time_delete_button button_1">Delete</div>
+                </div>
+            </div>
+            <div class="history_translation_list_frame frame_1">
+                <div class="history_translation_list_big_title big_title_1">Translation List</div>
+                <div class="history_translation_list_sub_frame">
+                    <div class="history_translation_list_no_data_title title_1">No Data</div>               
+                </div>
+            </div>
+        </div>
+        <div class="about_us_page page_1">
+            <div class="about_us_zaky_frame frame_1 about_us_frame">
+                <img src="./assets/zaky.png" alt="" class="about_us_zaky_image about_us_image">
+                <div class="about_us_zaky_description about_us_description">
+                    Hello, my name is Muhammad Zaky Yusuf Pahlevi, a Bachelor's student majoring in Business Information Technology at Bina Nusantara University (Binus) Bekasi, Indonesia. I have a passion for coding and problem-solving and am deeply interested in AI development. In addition to being a student, I also serve as a leader, guiding and directing all the projects undertaken by our team. I am always eager to learn new things and tackle challenges through various projects. I possess skills in developing mobile, desktop, and web applications, and I am proficient in programming languages such as Python, C, Java, HTML, CSS, JavaScript, Pascal, and C++.
+                </div>
+            </div>
+            <div class="about_us_adya_frame frame_1 about_us_frame">
+                <img src="./assets/adya.png" alt="" class="about_us_adya_image about_us_image">
+                <div class="about_us_adya_description about_us_description">
+                    Hello, my name is Adya Muhammad Prawira, a Bachelor's student majoring in Computer Science with a specialization in Software Engineering at Bina Nusantara University (Binus) Bekasi, Indonesia. I have a passion for coding and problem-solving and am deeply interested in AI development. In addition to being a student, I also serve as a leader, guiding and directing all the projects undertaken by our team. I am always eager to learn new things and tackle challenges through various projects. I possess skills in developing mobile, desktop, and web applications, and I am proficient in programming languages such as Python, C, Java, HTML, CSS, JavaScript, Pascal, and C++. My role as a leader allows me to manage and ensure the success of every project we handle.                
+                </div>
+            </div>
+            <div class="about_us_akhtar_frame frame_1 about_us_frame">
+                <img src="./assets/akhtar.png" alt="" class="about_us_akhtar_image about_us_image">
+                <div class="about_us_akhtar_description about_us_description">                    
+                    Hello, my name is Akhtar Jaffan Ramadhan, a Bachelor's student at Bina Nusantara University (Binus) Bekasi, Indonesia. I am majoring in Computer Science with a focus on Software Engineering. I have a strong interest in coding and problem-solving, and I greatly enjoy learning and applying AI technology. I am always enthusiastic about learning new things and working on challenging projects. With my skills in programming mobile, desktop, and web applications, I am proficient in various programming languages such as Python, C, Java, HTML, CSS, JavaScript, Pascal, and C++.                
+                </div>
+            </div>
+            <div class="about_us_robin_frame frame_1 about_us_frame">
+                <img src="./assets/robin.png" alt="" class="about_us_robin_image about_us_image">
+                <div class="about_us_robin_description about_us_description">
+                    My name is Robin Gibson, a Bachelor's student at Binus University Bekasi, majoring in Computer Science with a specialization in Software Engineering. I enjoy spending time coding and solving various problems, and I have a particular interest in AI technology. I love learning new things and seeking challenges through the projects I work on. I am skilled in developing mobile, desktop, and web applications, and I am proficient in programming languages such as Python, C, Java, HTML, CSS, JavaScript, Pascal, and C++.                
+                </div>
+            </div>
+            <div class="about_us_fadhel_frame frame_1 about_us_frame">
+                <img src="./assets/fadhel.png" alt="" class="about_us_fadhel_image about_us_image">
+                <div class="about_us_fadhel_description about_us_description">
+                    Let me introduce myself, I am Fadhel Baihaqi Rizanda, a Computer Science - Software Engineering student at Bina Nusantara University (Binus) Bekasi. I have a passion for coding and problem-solving, and I have a deep interest in AI development. I am always excited to explore new things and work on challenging projects. I possess the ability to develop mobile, desktop, and web applications using programming languages such as Python, C, Java, HTML, CSS, JavaScript, Pascal, and C++.                
+                </div>
+            </div>
+        </div>
+        <div class="setting_page page_1">
+            <div class="setting_app_control_frame frame_1">
+                <div class="setting_app_control_big_title big_title_1">Application Control</div>
+                <div class="setting_app_control_sub_frame">
+                    <div class="setting_app_control_color_mode_title title_1">Color Mode</div>
+                    <div class="setting_app_control_color_theme_title title_1">Color Theme</div>
+                    <select name="" id="" class="setting_app_control_color_mode_select input_selection">
+                        <option value="System">System</option>                        
+                        <option value="Light">Light</option>
+                        <option value="Dark">Dark</option>
+                    </select>
+                    <select name="" id="" class="setting_app_control_color_theme_select input_selection">
+                        <option value="Blue">Blue</option>                        
+                        <option value="Green">Green</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Violet">Violet</option>
+                        <option value="Orange">Orange</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting_landmark_control_frame frame_1">
+                <div class="setting_landmark_control_big_title big_title_1">Landmark Control</div>
+                <div class="setting_landmark_control_sub_frame">
+                    <div class="setting_landmark_control_pose_title title_1">Pose</div>
+                    <div class="setting_landmark_control_face_title title_1">Face</div>
+                    <div class="setting_landmark_control_right_hand_title title_1">Right Hand</div>
+                    <div class="setting_landmark_control_left_hand_title title_1">Left Hand</div>
+
+                    <label class="setting_landmark_control_pose_switch switch">
+                        <input type="checkbox" class="setting_landmark_control_pose_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_landmark_control_face_switch switch">
+                        <input type="checkbox" class="setting_landmark_control_face_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_landmark_control_right_hand_switch switch">
+                        <input type="checkbox" class="setting_landmark_control_right_hand_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_landmark_control_left_hand_switch switch">
+                        <input type="checkbox" class="setting_landmark_control_left_hand_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="setting_bounding_box_control_frame frame_1">
+                <div class="setting_bounding_box_control_big_title big_title_1">Bounding Box Control</div>
+                <div class="setting_bounding_box_control_sub_frame">
+                    <div class="setting_bounding_box_control_pose_title title_1">Pose</div>
+                    <div class="setting_bounding_box_control_face_title title_1">Face</div>
+                    <div class="setting_bounding_box_control_right_hand_title title_1">Right Hand</div>
+                    <div class="setting_bounding_box_control_left_hand_title title_1">Left Hand</div>
+                    <label class="setting_bounding_box_control_pose_switch switch">
+                        <input type="checkbox" class="setting_bounding_box_control_pose_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_bounding_box_control_face_switch switch">
+                        <input type="checkbox" class="setting_bounding_box_control_face_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_bounding_box_control_right_hand_switch switch">
+                        <input type="checkbox" class="setting_bounding_box_control_right_hand_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="setting_bounding_box_control_left_hand_switch switch">
+                        <input type="checkbox" class="setting_bounding_box_control_left_hand_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="add_page page_1">
+            <div class="add_control_frame frame_1">
+                <div class="add_control_big_title big_title_1">Add Dataset</div>
+                <div class="add_control_sub_frame">
+                    <div class="add_control_word_title title_1">Word</div>
+                    <div class="add_control_start_title title_1">Start Add</div>
+                    <div class="add_control_stop_title title_1">Stop Add</div>
+                    <div class="add_control_marker_title title_1">Marker</div>
+                    <input type="text" class="add_control_word_text input_text" placeholder="Word ..." readonly>
+                    <div class="add_control_start_button button_1">Start</div>
+                    <div class="add_control_stop_button button_1">Stop</div>                    
+                    <label class="add_control_marker_switch switch">
+                        <input type="checkbox" class="add_control_marker_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="add_camera_frame frame_1">
+                <img src="" alt="" class="add_camera_video">
+            </div>
+            <div class="add_progress_frame frame_1">
+                <progress value="0" max="100" class="add_progress_progressbar"></progress>
+                <div class="add_progress_information_text">Progress: 0.00%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Amount: 0 Data</div>
+            </div>
+        </div>
+        <div class="redata_page page_1">
+            <div class="redata_control_frame frame_1">
+                <div class="redata_control_big_title big_title_1">Redata Dataset</div>
+                <div class="redata_control_sub_frame">
+                    <div class="redata_control_word_title title_1">Word</div>
+                    <div class="redata_control_start_title title_1">Start Redata</div>
+                    <div class="redata_control_stop_title title_1">Stop Redata</div>
+                    <div class="redata_control_marker_title title_1">Marker</div>
+                    <input type="text" class="redata_control_word_text input_text" placeholder="Word ..." readonly>
+                    <div class="redata_control_start_button button_1">Start</div>
+                    <div class="redata_control_stop_button button_1">Stop</div>                    
+                    <label class="redata_control_marker_switch switch">
+                        <input type="checkbox" class="redata_control_marker_check input_check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="redata_camera_frame frame_1">
+                <img src="" alt="" class="redata_camera_video">
+            </div>
+            <div class="redata_progress_frame frame_1">
+                <progress value="0" max="100" class="redata_progress_progressbar"></progress>
+                <div class="redata_progress_information_text">Progress: 0.00%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Amount: 0 Data</div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create History</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/logo.png">
+</head>
+<body>
+    <div class="form_container">
+        <div class="form_create_history_page">
+            <div class="form_create_history_frame frame_1">
+                <div class="form_create_history_big_title big_title_1">Create History</div>
+                <div class="form_create_history_subframe">
+                    <div class="form_create_history_select_path_title title_1">Select Path</div>
+                    <div class="form_create_history_selected_path_title title_1">Selected Path</div>
+                    <div class="form_create_history_name_title title_1">History Name</div>
+                    <div class="form_create_history_create_title title_1">Create History</div>
+                    
+                    <div class="form_create_history_select_path_button button_1 send_data">Select</div>
+                    <input type="text" class="form_create_history_selected_path_text input_text send_data" placeholder="History Path ..." readonly>
+                    <input type="text" class="form_create_history_name_text input_text send_data" placeholder="History Name ...">
+                    <div class="form_create_history_create_button button_1 send_data">Create</div>
+                </div>    
+            </div>        
+        </div>
+    </div>
+    <script>
+        window.resizeTo(500, 600);
+        change_color_mode_root();
+        function change_color_mode_root() {
+            const color_root = ['--color-gray-1', '--color-gray-2', '--color-gray-3', '--color-gray-4', '--color-gray-5', '--color-main'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });
+        }
+        change_color_theme_root();
+        function change_color_theme_root() {
+            const color_root = ['--color-blue-1', '--color-blue-2', '--color-blue-3'];
+            color_root.forEach((color) => {
+                const saved_color = localStorage.getItem(color);
+                if (saved_color) {
+                    document.documentElement.style.setProperty(color, saved_color);
+                }
+            });   
+        }
+        let form_create_history_select_path_button = document.querySelector('.form_create_history_select_path_button');
+        let form_create_history_selected_path_text = document.querySelector('.form_create_history_selected_path_text');
+        let form_create_history_name_text = document.querySelector('.form_create_history_name_text');
+        let form_create_history_create_button = document.querySelector('.form_create_history_create_button');
+        form_create_history_select_path_button.addEventListener('click', () => {            
+            window.opener.postMessage({
+                element_event: 'form_create_history_select_path_button'
+            }, '*');
+        });
+        form_create_history_create_button.addEventListener('click', () => {
+            window.opener.postMessage({
+                element_event: 'form_create_history_create_button',
+                history_path: form_create_history_selected_path_text.value,
+                history_name: form_create_history_name_text.value
+            }, '*');
+        });
+        window.addEventListener('message', (event) => {
+            if(event.origin !== window.location.origin) return;
+            if(event.data.element_event == 'form_create_history_selected_path_text') {
+                form_create_history_selected_path_text.value = event.data.history_path;
+            } else if(event.data.element_event == 'setting_app_control_color_mode_select_event') {
+                change_color_mode_root();
+            } else if(event.data.element_event == 'setting_app_control_color_theme_select_event') {
+                change_color_theme_root();
+            }
+        });
+    </script>
+</body>
+</html>
