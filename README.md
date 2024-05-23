@@ -4,6 +4,10 @@ Signfinity is an application that can help deaf and mute people with disabilitie
 
 We recommend using python 3.8.10 and pip 24.0 to be able to download all the appropriate dependencies.
 
+python -m venv venv
+
+python venv\Scripts\activate
+
 python --version
 
 python 3.8.10
