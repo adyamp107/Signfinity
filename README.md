@@ -42,6 +42,10 @@ History Page:
 
 ![history_page](https://github.com/adyamp107/Signfinity/assets/137896283/10db548a-5f50-471e-8b02-68d2650d6b21)
 
+About Us Page:
+
+![Screenshot (356)](https://github.com/adyamp107/Signfinity/assets/137896283/5d9e87a2-b29c-43eb-98ad-caa5edab36d6)
+
 Setting Page:
 
 ![setting_page](https://github.com/adyamp107/Signfinity/assets/137896283/dc8b1341-a453-4d8a-9b30-3338d69f6c74)
