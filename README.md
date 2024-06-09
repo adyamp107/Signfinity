@@ -64,6 +64,4 @@ You can also change the color of the application widget:
 
 ![violet_color](https://github.com/adyamp107/Signfinity/assets/137896283/6895b98b-23e2-48ba-9422-c9908fc22fa8)
 
-============================================================================================
-
 Enjoy:)
