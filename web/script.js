@@ -479,6 +479,7 @@ function clear_training_selected_path_file_folder_text() {
     training_graph_confusion_matrix_image.src = '';
     training_graph_error_rate_image.src = '';
     training_graph_epoch_loss_image.src = '';
+    training_graph_epoch_accuracy_image.src = '';
     training_table_classification_report_sub_frame.innerHTML = `
         <div class="training_table_classification_report_no_data">No Data</div>
     `;
