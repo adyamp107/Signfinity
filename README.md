@@ -2,7 +2,7 @@
 
 # Signfinity
 
-Signfinity is an application that can help deaf and mute people with disabilities to communicate with other people. In addition, Signfinity provides a dataset collection tool that allows users to create various languages ​​without limitations. Signfinity also provides graph and table features so you can analyze the machine learning and deep learning training models that have been created. Signfinity provides various algorithms such as Random Forest, Decision Tree, K-Nearest Neighbors, Support Vector Machine, Naive Bayes, Convolutional Neural Network, and training models from Azure Machine Learning (coming soon).
+Signfinity is a project modeled after the InSign2 project, only the frontend is different. Signfinity is an application that can help deaf and mute people with disabilities to communicate with other people. In addition, Signfinity provides a dataset collection tool that allows users to create various languages ​​without limitations. Signfinity also provides graph and table features so you can analyze the machine learning and deep learning training models that have been created. Signfinity provides various algorithms such as Random Forest, Decision Tree, K-Nearest Neighbors, Support Vector Machine, Naive Bayes, Convolutional Neural Network, and training models from Azure Machine Learning (coming soon).
 
 # How to run the program
 
